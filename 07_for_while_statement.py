@@ -47,3 +47,10 @@ for item in range(3):
         print('密码不正确')
 else:
     print('对不起三次密码均输入错误！')
+
+
+# 9 * 9 乘法表
+for i in range(1, 10):
+    for j in range(1, i + 1):
+        print(i, ' * ', j, ' = ', i * j, end='\t')
+    print()
