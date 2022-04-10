@@ -19,5 +19,6 @@ print(stu1.name)
 # print(stu1.__age)  # AttributeError: 'Student' object has no attribute '__age'
 stu1.hello()
 
+# dir 列出该对象的所有属性
 print(dir(stu1))
 print(stu1._Student__age)  # 也能访问，但是不建议

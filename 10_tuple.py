@@ -8,7 +8,7 @@
 tuple1 = ('python', 'tuple', 12, 34)
 print(tuple1, type(tuple1))
 
-# 如果元组中只有一个元素，需要在元素后面加上, 否则程序会将其识别为基本数据类型
+# 如果元组中只有一个元素，需要在元素后面加上 ',' 否则程序会将其识别为基本数据类型
 test = ('python')
 print(test, type(test)) # <class 'str'>
 tuple2 = ('python',)

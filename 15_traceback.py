@@ -9,5 +9,5 @@ import traceback
 try:
     print('----------------------')
     print(10 / 0)
-except:
+except ZeroDivisionError:
     traceback.print_exc()

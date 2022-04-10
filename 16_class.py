@@ -60,5 +60,7 @@ print(stu2.name, stu2.age, stu2.gender)
 # 为对象动态绑定方法
 def show():
     print('定义在类之外的方法！')
+
+
 stu2.show = show
 stu2.show()

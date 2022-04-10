@@ -5,9 +5,9 @@
 # @File    : 11_set.py
 
 # Python 中的集合也是可变的，可以理解为没有value的键值对（字典）
-set1 = {'python', 'set', 100, 'set'} # 集合中的元素和dict中一样，不能重复，无需
+set1 = {'python', 'set', 100, 'set'}  # 集合中的元素和dict中一样，不能重复，无需
 print(set1, type(set1))
-set2 = set(['python', 'set', 100]) # set 函数的入参可以是一个list，也可以是一个元组
+set2 = set(['python', 'set', 100])  # set 函数的入参可以是一个list，也可以是一个元组
 print(set2, type(set2))
 set3 = set(('python', 'set', 100, 100, 34, 100))
 print(set3, type(set3))

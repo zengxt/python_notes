@@ -32,7 +32,7 @@ class Teacher(Person):
 
     # 方法覆盖
     def hello(self):
-        print('my name is ', self.name, ", i'am ", self.age, 'years old, ', 'ready worked ', self.work_year, 'years.')
+        print('my name is ', self.name, ", i'am ", self.age, 'years old, ', 'already worked ', self.work_year, 'years.')
 
 
 tea = Teacher('李四', 34, 4)

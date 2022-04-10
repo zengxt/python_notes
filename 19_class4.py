@@ -28,3 +28,8 @@ print('Person这个类的id值为：{0}'.format(id(Person)))
 
 p1 = Person('李四', 34)
 print('p1实例的id为{0}'.format(id(p1)))
+
+
+print("=============================================")
+p2 = Person('李四', 34)
+print('p2实例的id为{0}'.format(id(p2)))

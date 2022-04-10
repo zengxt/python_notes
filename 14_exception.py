@@ -12,7 +12,7 @@ try:
 except ZeroDivisionError:
     print('除数不能为 0 ')
 except ValueError:
-    print('清输入一个正确的数字。')
+    print('请输入一个正确的数字。')
 except BaseException as e:
     print(e)
 else:
