@@ -77,3 +77,7 @@ Python学习笔记
 |  flush()                   |  把缓冲区的内容写入文件，但不关闭文件                                                       |
 |  close()                   |  把缓冲区的内容写入文件，同时关闭文件，释放文件对象相关资源                                   |
 
+
+### 使用 PyInstaller 模块对项目进行打包
+pip install PyInstaller
+pyinstaller -F /path/filename.py  # -F 表示只生成一个可执行文件
