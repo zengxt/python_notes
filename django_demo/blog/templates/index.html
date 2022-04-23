@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+<!--    &lt;!&ndash; Bootstrap 的 CSS 文件 &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-p1KAotb3W9ndluCsqePPYnjRm3c6abdnIjo0tQwYUv83VsbsYd43RuofnFAaDo0E" crossorigin="anonymous">-->
+
+<!--    &lt;!&ndash; 选项 1：jQuery 和 Bootstrap 集成包（集成了 Popper） &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-E5Sj1saJVFNzWWK3YIJB4LEDEEVEGaOdfmCprPDkfWUo+xkb6Ep52Q1TMEtgcFwi" crossorigin="anonymous"></script>-->
+
+    <title>Django 入门案例!</title>
+</head>
+<body>
+<div class="container page-header">
+    <h1>三小时入门 Django 框架
+        <small> --- 慕课网教程</small>
+    </h1>
+</div>
+
+<div class="container page-body">
+    <div class="col-md-9" role="main">
+        <div class="body-main">
+            <div>
+                <h2>Django 框架简介</h2>
+                <p>Django 在新一代的 Web框架 中非常出色，为什么这么说呢？8
+
+                    为回答该问题，让我们考虑一下不使用框架设计 Python 网页应用程序的情形。 贯穿整本书，我们多次展示不使用框架实现网站基本功能的方法，让读者认识到框架开发的方便。 （不使用框架，更多情况是没有合适的框架可用。 最重要的是，理解实现的来龙去脉会使你成为一个优秀的web开发者。）3
+
+                    使用Python开发Web，最简单，原始和直接的办法是使用CGI标准，在1998年这种方式很流行。 现在从应用角度解释它是如何工作： 首先做一个Python脚本，输出HTML代码，然后保存成.cgi扩展名的文件，通过浏览器访问此文件。 就是这样。
+
+                    首先，用户请求CGI，脚本代码打印Content-Type行，后面跟着换行。 再接下 来是一些HTML的起始标签，然后连接数据库并执行一些查询操作，获取最新的十本书。 在遍历这些书的同时，生成一个书名的HTML列表项。 最后，输出HTML的结束标签并且关闭数据库连接。3
+
+                    像这样的一次性的动态页面，从头写起的方法并非一定不好。 其中一点： 这些代码简单易懂，就算是一个初起步的 开发者都能读明白这16行的Python的代码，而且这些代码从头到尾做了什么都能了解得一清二楚。 不需要学习额外 的背景知识，没有额外的代码需要去了解。 同样，也易于部署这16行代码，只需要将它保存为一个 latestbooks.cgi 的 文件，上传到网络服务器上，通过浏览器访问即可。4
+
+                    尽管实现很简单，还是暴露了一些问题和不便的地方。 问你自己这几个问题：6
+
+                    应用中有多处需要连接数据库会怎样呢？ 每个独立的CGI脚本，不应该重复写数据库连接的代码。 比较实用的办法是写一个共享函数，可被多个代码调用。1
+
+                    一个开发人员 确实 需要去关注如何输出Content-Type以及完成所有操作后去关闭数据 库么？ 此类问题只会降低开发人员的工作效率，增加犯错误的几率。 那些初始化和释放 相关的工作应该交给一些通用的框架来完成。2
+
+                    如果这样的代码被重用到一个复合的环境中会发生什么？ 每个页面都分别对应独立的数据库和密码吗？2
+
+                    如果一个Web设计师，完全没有Python开发经验，但是又需要重新设计页面的话，又将 发生什么呢？ 一个字符写错了，可能导致整个应用崩溃。 理想的情况是，页面显示的逻辑与从数据库中读取书本记录分隔开，这样 Web设计师的重新设计不会影响到之前的业务逻辑。4
+
+                    以上正是Web框架致力于解决的问题。 Web框架为应用程序提供了一套程序框架， 这样你可以专注于编写清晰、易维护的代码，而无需从头做起。 简单来说，这就是Django所能做的。</p>
+            </div>
+            <div>
+                <h2>Django 框架入门</h2>
+                <p>由于现代Web开发环境由多个部件组成，安装Django需要几个步骤。 这一章，我们将演示如何安装框架以及一些依赖关系。3
+
+                    因为Django就是纯Python代码，它可以运行在任何Python可以运行的环境，甚至是手机上！ 但是这章只提及Django安装的通用脚本。 我们假设你把它安装在桌面/笔记本电脑或服务器。5
+
+                    往后，在第12章，我们将讨论如何部署Django到一个生产站点。
+
+                    Python 安装
+                    Django本身是纯Python编写的，所以安装框架的第一步是确保你已经安装了Python。2
+
+                    Python版本
+                    核心Django框架可以工作在2.3至2.6（包括2.3和2.6）之间的任何Python版本。 Django的可选GIS（地理信息系统）支持需要Python 2.4到2.6。6
+
+                    如果你不确定要安装Python的什么版本，并且你完全拿不定主意的话,那就选2.x系列的最新版本吧。 版本2.6。 虽然Django在2.3至2.6版之间的任意Python版本下都一样运行得很好，但是新版本的Python提供了一些你可能比较想应用在你的程序里的，更加丰富和额外的语言特性。 另外，某些你可能要用到的Django第三方插件会要求比Python 2.3更新的版本，所以使用比较新的Python版本会让你有更多选择。5
+
+                    Django和 Python 3.0
+
+                    在写作本书的时候，Python3.0已经发布，但Django暂时还不支持。 Python3.0这个语言本身引入了大量不向后兼容的改变，因此，我们预期大多数主要的Python库和框架将花几年才能衔接，包括Django。12
+
+                    如果你是个Python新手并且正迷茫于到底是学习Python 2.x还是Python 3.x的话，我们建议你选择Python 2.x。
+
+                    最后，如果你使用trunk，你要知道使用的是哪个trunk版本。 如果你去社区寻求帮助，或是为Django框架提供改进，知道你使用的版本号是非常重要的。 因此，当你到社区去求助，或者为 django 提供改进意见的时候，请时刻记住说明你正在使用的 django 的版本号。 如何知道你正在使用的 django 的版本号呢？进入`` djtrunk`` 目录，然后键入 svn info ，在输出信息中查看 Revision: (版本:) 后跟的数字。 Django在每次更新后，版本号都是递增的，无论是修复Bug、增加特性、改进文档或者是其他。 在一些Django社区中，版本号甚至成为了一种荣誉的象征，我从[写上非常低的版本号]开始就已经使用Djano了。
+
+                    让我们花点时间去测试 Django 是否安装成功，并工作良好。同时也可以了解到一些明确的安装后的反馈信息。 在Shell中，更换到另外一个目录（不是包含Django的目录），然后输入python来打开Python的交互解释器。如果安装成功，你应该可以导入django模块了：
+
+                    这会儿，你可以使用django写web应用了，因为django只要求python正确安装后就可以跑起来了。 不过，当你想开发一个数据库驱动的web站点时，你应当需要配置一个数据库服务器。
+
+                    如果你只想玩一下，可以不配置数据库，直接跳到 开始一个project 部分去，不过你要注意本书的例子都是假设你配置好了一个正常工作的数据库。
+
+                    大部分情况下，这四种数据库都会和Django框架很好的工作。 （一个值得注意的例外是Django的可选GIS支持，它为PostgreSQL提供了强大的功能。）如果你不准备使用一些老旧系统，而且可以自由的选择数据库后端，我们推荐你使用PostgreSQL，它在成本、特性、速度和稳定性方面都做的比较平衡。</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3" role="complementary">
+        <div>
+            <h2>最新文章</h2>
+            <h4><a href="/blog/detail/{{article.article_id}}">最新文章1</a></h4>
+            <h4><a href="/blog/detail/{{article.article_id}}">最新文章2</a></h4>
+            <h4><a href="/blog/detail/{{article.article_id}}">最新文章3</a></h4>
+            <h4><a href="/blog/detail/{{article.article_id}}">最新文章4</a></h4>
+            <h4><a href="/blog/detail/{{article.article_id}}">最新文章5</a></h4>
+            <h4><a href="/blog/detail/{{article.article_id}}">最新文章6</a></h4>
+            <h4><a href="/blog/detail/{{article.article_id}}">最新文章7</a></h4>
+        </div>
+    </div>
+</div>
+</body>
+</html>
