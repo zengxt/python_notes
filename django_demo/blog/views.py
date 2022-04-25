@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -24,8 +25,37 @@ def article_content(request):
 
 
 def get_article_list(request):
+    page = request.GET.get("page")
+    if page:
+        page = int(page)
+    else:
+        page = 1
+    print('page = %d' % page)
+
     all_article = Article.objects.all()
-    return render(request, 'blog/index.html', {'article_list': all_article, 'top_new_article_list': all_article})
+    top5_article_list = Article.objects.order_by('-publish_date')[0:5]
+
+    paginator = Paginator(all_article, 3)
+    page_num = paginator.num_pages
+    print('page num = ', page_num)
+
+    page_article_list = paginator.page(page)
+    if page_article_list.has_next():
+        next_page = page + 1
+    else:
+        next_page = page
+    if page_article_list.has_previous():
+        pre_page = page - 1
+    else:
+        pre_page = page
+
+    return render(request, 'blog/index.html',
+                  {'article_list': page_article_list,
+                   'top5_article_list': top5_article_list,
+                   'page_num': range(1, page_num + 1),
+                   'curr_page': page,
+                   'next_page': next_page,
+                   'pre_page': pre_page})
 
 
 def get_article_detail(request, article_id):
